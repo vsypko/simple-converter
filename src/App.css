@@ -1,38 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 10vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
+  font-weight: bold;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.currency {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  height: 100px;
 }
 
-@keyframes App-logo-spin {
+@keyframes spinning {
   from {
-    transform: rotate(0deg);
+    transform: rotateY(0deg);
   }
   to {
-    transform: rotate(360deg);
+    transform: rotateY(360deg);
   }
+}
+
+.symbol {
+  animation-name: spinning;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.sign {
+  padding-left: 20px;
+}
+
+.title {
+  margin-top: 30px;
+  font-family: 'Caveat Brush', cursive;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.inputs-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.input {
+  margin-top: 10vh;
+  width:50%;
+  padding: 10px;
 }
