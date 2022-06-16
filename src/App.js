@@ -11,6 +11,7 @@ const App = () => {
     date.getMonth() + 1
   }${date.getDate()}`
 
+  //get initial data from API----------------------------------------------------------------
   React.useEffect(() => {
     async function fetchData() {
       const res = await fetch(

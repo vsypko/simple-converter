@@ -2,7 +2,7 @@ import React from "react"
 
 const Converter = (props) => {
   const { currencies } = props
-
+  //functioт for getting required currencies--------------------------------------------------
   const getCurrency = (type, array) => {
     let currency = array.find((el) => el.cc === type)
     if (currency) {
@@ -10,6 +10,7 @@ const Converter = (props) => {
     }
   }
 
+  //set array of required currencies----------------------------------------------------
   let currency = [{ type: "UAH", rate: 1, value: 0 }]
 
   if (currencies && currencies.length > 0) {
@@ -17,9 +18,11 @@ const Converter = (props) => {
     currency.push(getCurrency("USD", currencies))
   }
 
+  //states for left and right inputs------------------------------------------------------
   const [leftCurrency, setLeftCurrency] = React.useState()
   const [rightCurrency, setRightCurrency] = React.useState()
 
+  //set initial values for states-----------------------------------------------------------
   React.useEffect(() => {
     if (currencies && currencies.length > 0) {
       setLeftCurrency(currency[0])
@@ -28,6 +31,7 @@ const Converter = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currencies])
 
+  //the main handler for inputs and selects-------------------------------------------------
   const handleInput = (e) => {
     let i = 0
     let num = 0
@@ -83,6 +87,7 @@ const Converter = (props) => {
     }
   }
 
+  //some 'unclean code' here to avoid problems with setting props name for selects and inputs------------
   return (
     <div>
       <div className="title">YOUR OWN CURRENCY CONVERTER</div>
